@@ -19,11 +19,11 @@
 
 <script type="text/babel"> // 3 babel here
 
-let GreetingsComp = () => {
+let GreetingsFunc = () => {
     return (<h1> Greetings from Functional Comp </h1>);
 }
 
-class MyClassComp extends React.Component{
+class MyGreetingsComp extends React.Component{
     render(){
         return <h1> Greetings from Class </h1>
     }
@@ -33,7 +33,7 @@ class MyClassComp extends React.Component{
 // 4 create root from div
 let rootnode = ReactDOM.createRoot(document.getElementById('root'));
 
-rootnode.render(<><GreetingsComp/><MyClassComp/></>);
+rootnode.render(<><MyGreetingsComp/><GreetingsFunc/></>);
 
 
 
