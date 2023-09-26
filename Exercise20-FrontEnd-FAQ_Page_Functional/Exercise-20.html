@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+    <div class="container">
+        <h1>    Faqs Page </h1>
+     
+        <div class='row' id="root"></div>     
+    </div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel"> 
+
+
+let MyAccordion = (props) => {
+return(<div class="accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id={`flush-${props.heading}`}>
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#flush-${props.collapse}`} aria-expanded="false" aria-controls="flush-collapse">
+          {props.AccordionInfo}
+        </button>
+      </h2>
+      <div id={`flush-${props.collapse}`} class="accordion-collapse collapse" aria-labelledby={`flush-${props.heading}`} data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the {props.item} item's accordion body.</div>
+      </div>
+    </div>
+    </div>
+    );
+   
+}
+
+
+
+let root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<> <MyAccordion AccordionInfo='I forgot my login information.' item='first' heading='headingOne' collapse='collapseOne'/>
+<MyAccordion AccordionInfo=' How do I create an account.' item='second'heading='headingTwo' collapse='collapseTwo'/>
+<MyAccordion AccordionInfo='Where do I check my booking information.' item='third' heading='headingThree' collapse='collapseThree'/>
+<MyAccordion AccordionInfo='How can I cancel my reservation?' item='fourth' heading='headingFour' collapse='collapseFour'/>
+<MyAccordion AccordionInfo='I missed my reservation.' item='fifth' heading='headingFive' collapse='collapseFive'/>
+
+
+</>);
+</script>
+   
+   
+</body>
+</html>
